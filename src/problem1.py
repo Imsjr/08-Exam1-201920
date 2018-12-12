@@ -3,13 +3,13 @@ Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jason Ims
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 # -----------------------------------------------------------------------------
-# TODO: 2. Right-click on the  src  folder and
+# Done: 2. Right-click on the  src  folder and
 #              Mark Directory as ... Sources Root,
 #          if you have not already done so.
 # -----------------------------------------------------------------------------
@@ -56,7 +56,7 @@ def run_test_problem1():
     window = rg.RoseWindow(300, 400, title)
 
     # Test 3:
-    square = rg.Square(rg.Point(150, 125), 150)
+    square = rg.Square(rg.Point(150, 125),150)
     square.fill_color = 'yellow'
 
     problem1(square, 15, window)
@@ -64,6 +64,16 @@ def run_test_problem1():
 
 
 def problem1(square, thickness, window):
+    square.attach_to(window)
+    circle = rg.Circle(rg.Point((square.center.x),square.center.y+square.length_of_each_side),square.length_of_each_side/2)
+    circle.fill_color = square.fill_color
+    circle.outline_thickness = thickness
+    circle.attach_to(window)
+    line = rg.Line(circle.center,(rg.Point(square.center.x-(.5*square.length_of_each_side),square.center.y)))
+    line.thickness = thickness
+    line.color = square.outline_color
+    line.attach_to(window)
+    window.render()
     """
     See   problem1_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
