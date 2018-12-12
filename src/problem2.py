@@ -44,7 +44,36 @@ def test_factor_sum():
     ###########################################################################
     # WRITE YOUR TESTS BELOW HERE:
     ###########################################################################
-
+    #  Test 1:
+    expected = 11
+    actual = factor_sum(28)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    # Test 2:
+    expected = 4
+    actual = factor_sum(25)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    #  Test 3:
+    expected = 9
+    actual = factor_sum(10)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    # Test 4:
+    expected = 10
+    actual = factor_sum(12)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
+    # Test 5:
+    expected = 4
+    actual = factor_sum(9)
+    print()
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 def factor_sum(n):
     """
